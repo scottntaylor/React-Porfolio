@@ -19,14 +19,15 @@ class App extends React.Component {
       title: "Scott Taylor",
       headerLinks: [
         { title: 'Home', path: '/' },
-        { title: 'About', path: '/abou' },
+        { title: 'About', path: '/about' },
         { title: 'Contact', path: '/contact' },
 
       ],
       home: {
-        title: 'To Be Determined',
-        subtitle: 'To Be Determined',
-        body: 'To Be Determined'
+        title: 'Untapped Creativity',
+        subtitle: 'Projects to change the world',
+        text: 'To Be Determined',
+        body: 'Welcome to my page'
       },
       about: {
         title: 'About Me'
@@ -62,8 +63,8 @@ class App extends React.Component {
           </NavBar>
 
           <Route path="/" exact render={()=><HomePage title={this.state.home.title} subtitle={this.state.home.subtitle} text={this.state.home.body} /> } />
-          <Route path="/about" exact render={()=><AboutPage title={this.state.home.title} /> } />
-          <Route path="/contact" exact render={()=><ContactPage title={this.state.home.title} /> } />
+          <Route path="/about" exact render={()=><AboutPage title={this.state.about.title} /> } />
+          <Route path="/contact" exact render={()=><ContactPage title={this.state.contact.title} /> } />
           <Footer/>
         </Container>
 
