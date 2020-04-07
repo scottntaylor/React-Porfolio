@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Components/Card';
 import headshot from '../assets/images/Headshot.png';
+// import trees from '../assets/images/Trees.png';
 import rainier from '../assets/images/Paradise.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,16 +13,16 @@ class Carousel extends React.Component{
             items: [
                 {
                     id:0,
-                    title: 'title',
-                    subtitle: 'subtitle',
+                    title: 'Scott Taylor',
+                    subtitle: 'Headshot',
                     imgSrc: headshot,
                     link: 'link',
                     selected: false
                 },
                 {
                     id:1,
-                    title: 'title1',
-                    subtitle: 'subtitle1',
+                    title: 'Valley',
+                    subtitle: 'Paradise - Mt. Rainier',
                     imgSrc: rainier,
                     link: 'link1',
                     selected: false
@@ -38,6 +39,7 @@ class Carousel extends React.Component{
          }
      }
      handleCardClick = (id, card) => {
+         console.log(id);
          let items = [...this.state.items]
 
          items[id].selected = items[id].selected ? false : true
@@ -55,7 +57,7 @@ class Carousel extends React.Component{
 
     makeItems = (items ) =>  {
         return items.map(item =>{
-            return <Card item={item} onClick={e => this.handleCardClick(item.id, e)} key={item.id} />
+            return <Card item={item} click={e => this.handleCardClick(item.id, e)} key={item.id} />
         })
     }
 
