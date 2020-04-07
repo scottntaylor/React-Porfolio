@@ -1,7 +1,9 @@
 import React from 'react';
+import Card from '../Components/Card';
 import headshot from '../assets/images/Headshot.png';
 import rainier from '../assets/images/Paradise.png';
-// import headshot from '../assets/Headshot.jpg';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 class Carousel extends React.Component{
      constructor(props){
@@ -12,7 +14,7 @@ class Carousel extends React.Component{
                     id:0,
                     title: 'title',
                     subtitle: 'subtitle',
-                    imgsrc: headshot,
+                    imgSrc: headshot,
                     link: 'link',
                     selected: false
                 },
@@ -20,7 +22,7 @@ class Carousel extends React.Component{
                     id:1,
                     title: 'title1',
                     subtitle: 'subtitle1',
-                    imgsrc: rainier,
+                    imgSrc: rainier,
                     link: 'link1',
                     selected: false
                 },
@@ -28,7 +30,7 @@ class Carousel extends React.Component{
                 //     id:2,
                 //     title: 'title2',
                 //     subtitle: 'subtitle2',
-                //     imgsrc: images,
+                //     imgSrc: images,
                 //     link: 'link2',
                 //     selected: false
                 // },
@@ -59,7 +61,12 @@ class Carousel extends React.Component{
 
      render (){
          return (
-             <p>carousel works!</p>
+             <Container fluid={true}>
+                 <Row className="justify-content-around">
+                    {this.makeItems(this.state.items)}
+                 </Row>
+             </Container>
+           
          );
      }
 }  
